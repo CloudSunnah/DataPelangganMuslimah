@@ -41,19 +41,42 @@
     </style>
 </head>
 <body class="p-4 sm:p-6 md:p-8">
-    <div class="max-w-7xl mx-auto">
+
+    <!-- Tampilan Login (ditampilkan saat belum login) -->
+    <div id="login-view" class="min-h-screen flex items-center justify-center">
+        <div class="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg text-center">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17 8C8 10 5.9 16.17 3.82 21.32a1 1 0 0 0 1.35 1.16C7.22 21.57 12 18 17 8z"/>
+                <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 1.05.27 2.02.74 2.86.17.3.52.4.83.25.31-.15.42-.51.25-.82A5.01 5.01 0 0 1 6 8c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5c-.75 0-1.45-.17-2.09-.46-.35-.16-.75.06-.9.41s.06.75.41.9C9.91 13.78 10.91 14 12 14c2.76 0 5-2.24 5-5z"/>
+            </svg>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Selamat Datang</h1>
+            <p class="text-gray-600 mb-8">Silakan login untuk mengelola data pelanggan Anda.</p>
+            <button id="login-btn" class="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-700 font-semibold py-3 px-4 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 transition-all transform hover:scale-105">
+                <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#fbc02d" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#e53935" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.222,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1565c0" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.574l6.19,5.238	C42.022,35.244,44,30.036,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>
+                Masuk dengan Google
+            </button>
+        </div>
+    </div>
+
+    <!-- Konten Aplikasi Utama (ditampilkan setelah login) -->
+    <div id="main-app-content" class="max-w-7xl mx-auto hidden">
         <!-- Header -->
         <header class="mb-8">
             <div class="bg-gradient-to-r from-pink-500 via-red-500 to-purple-600 p-6 rounded-xl shadow-lg text-white animated-gradient">
-                <div class="flex items-center">
-                    <!-- Logo Muslimah -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17 8C8 10 5.9 16.17 3.82 21.32a1 1 0 0 0 1.35 1.16C7.22 21.57 12 18 17 8z"/>
-                        <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 1.05.27 2.02.74 2.86.17.3.52.4.83.25.31-.15.42-.51.25-.82A5.01 5.01 0 0 1 6 8c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5c-.75 0-1.45-.17-2.09-.46-.35-.16-.75.06-.9.41s.06.75.41.9C9.91 13.78 10.91 14 12 14c2.76 0 5-2.24 5-5z"/>
-                    </svg>
-                    <div>
-                         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Dasbor Pelanggan Muslimah</h1>
-                         <p class="text-pink-100 mt-2">Platform terpusat untuk mengelola pelanggan berharga Anda.</p>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                    <div class="flex items-center mb-4 sm:mb-0">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17 8C8 10 5.9 16.17 3.82 21.32a1 1 0 0 0 1.35 1.16C7.22 21.57 12 18 17 8z"/>
+                            <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 1.05.27 2.02.74 2.86.17.3.52.4.83.25.31-.15.42-.51.25-.82A5.01 5.01 0 0 1 6 8c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5c-.75 0-1.45-.17-2.09-.46-.35-.16-.75.06-.9.41s.06.75.41.9C9.91 13.78 10.91 14 12 14c2.76 0 5-2.24 5-5z"/>
+                        </svg>
+                        <div>
+                             <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Dasbor Pelanggan Muslimah</h1>
+                             <p class="text-pink-100 mt-2">Platform terpusat untuk mengelola pelanggan berharga Anda.</p>
+                        </div>
+                    </div>
+                     <div id="user-info-container" class="text-sm text-right">
+                        <p id="user-info-display" class="font-semibold"></p>
+                        <button id="logout-btn" class="mt-1 font-bold text-white underline hover:text-pink-200 transition">Logout</button>
                     </div>
                 </div>
             </div>
@@ -139,7 +162,7 @@
                 <div id="customer-list" class="space-y-4">
                     <!-- Data pelanggan akan ditampilkan di sini -->
                     <div id="loading-indicator" class="text-center p-10">
-                        <p class="text-gray-500">Memuat data pelanggan...</p>
+                        <p class="text-gray-500">Menunggu login...</p>
                     </div>
                 </div>
             </div>
@@ -161,11 +184,10 @@
 <script type="module">
     // --- Impor Firebase ---
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc, onSnapshot, collection, addDoc, deleteDoc, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, onSnapshot, collection, addDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
     // --- KONFIGURASI FIREBASE MILIK ANDA ---
-    // Kode ini sudah terhubung dengan akun Firebase "data-pelanggan-muslimah" Anda.
     const firebaseConfig = {
       apiKey: "AIzaSyDC3-JbEYvcbXWOngB5O3aFlrHcioJJY_o",
       authDomain: "data-pelanggan-muslimah.firebaseapp.com",
@@ -176,7 +198,6 @@
     };
 
     // --- Inisialisasi Aplikasi ---
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const auth = getAuth(app);
@@ -185,6 +206,14 @@
     let userId = null;
     let allCustomers = [];
     let countdownIntervals = {};
+    let unsubscribeFromCustomers; // Untuk menghentikan listener saat logout
+
+    const loginView = document.getElementById('login-view');
+    const mainAppContent = document.getElementById('main-app-content');
+    const loginBtn = document.getElementById('login-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const userInfoDisplay = document.getElementById('user-info-display');
+    const userInfoContainer = document.getElementById('user-info-container');
     const customerForm = document.getElementById('customer-form');
     const customerList = document.getElementById('customer-list');
     const loadingIndicator = document.getElementById('loading-indicator');
@@ -206,26 +235,57 @@
     // --- Otentikasi & Inisialisasi ---
     onAuthStateChanged(auth, user => {
         if (user) {
+            // Pengguna berhasil login
             userId = user.uid;
+            loginView.classList.add('hidden');
+            mainAppContent.classList.remove('hidden');
+            userInfoDisplay.textContent = user.displayName || user.email;
             listenForCustomers();
         } else {
-            signInAnonymously(auth).catch(error => console.error("Gagal login anonim:", error));
+            // Pengguna logout atau belum login
+            userId = null;
+            if (unsubscribeFromCustomers) {
+                unsubscribeFromCustomers(); // Hentikan listener data
+            }
+            loginView.classList.remove('hidden');
+            mainAppContent.classList.add('hidden');
+            allCustomers = [];
+            displayCustomers(); // Kosongkan tampilan
+            updateStatistics(); // Reset statistik jadi 0
         }
     });
 
     // --- Fungsi Utama ---
+    const handleGoogleLogin = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            await signInWithPopup(auth, provider);
+        } catch (error) {
+            console.error("Gagal login dengan Google:", error);
+            if (error.code === 'auth/unauthorized-domain') {
+                alert("Gagal login: Domain tidak diizinkan.\n\nPastikan Anda telah menambahkan domain situs web ini ke bagian 'Authorized domains' di pengaturan Authentication Firebase Anda.");
+            } else {
+                alert("Gagal login dengan Google. Pastikan popup tidak diblokir dan coba lagi.");
+            }
+        }
+    };
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+        } catch (error) {
+            console.error("Gagal logout:", error);
+        }
+    };
+
     function listenForCustomers() {
         if (!userId) return;
         const customersCollectionRef = collection(db, "users", userId, "customers");
         
-        onSnapshot(customersCollectionRef, (snapshot) => {
+        unsubscribeFromCustomers = onSnapshot(customersCollectionRef, (snapshot) => {
             loadingIndicator.style.display = 'none';
             allCustomers = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-            
-            // Perbarui statistik
             updateStatistics();
-
-            // Tampilkan data
             displayCustomers();
         }, error => {
             console.error("Gagal memuat data:", error);
@@ -246,8 +306,8 @@
     }
 
     function displayCustomers() {
-        customerList.innerHTML = ''; // Kosongkan daftar sebelum menampilkan
-        Object.values(countdownIntervals).forEach(clearInterval); // Hentikan semua interval lama
+        customerList.innerHTML = '';
+        Object.values(countdownIntervals).forEach(clearInterval);
         countdownIntervals = {};
 
         const searchTerm = searchInput.value.toLowerCase();
@@ -260,7 +320,6 @@
             );
         }
 
-        // Urutkan: sisa waktu paling sedikit di atas
         filteredCustomers.sort((a, b) => {
             const timeLeftA = new Date(a.endDate).getTime() - new Date().getTime();
             const timeLeftB = new Date(b.endDate).getTime() - new Date().getTime();
@@ -269,8 +328,10 @@
 
         if (filteredCustomers.length === 0 && allCustomers.length > 0) {
              customerList.innerHTML = `<p class="text-center text-gray-500 p-4">Tidak ada pelanggan yang cocok dengan pencarian.</p>`;
-        } else if (filteredCustomers.length === 0) {
+        } else if (filteredCustomers.length === 0 && userId) {
              customerList.innerHTML = `<p class="text-center text-gray-500 p-4">Belum ada data pelanggan. Silakan tambahkan satu!</p>`;
+        } else {
+            loadingIndicator.style.display = 'none';
         }
 
 
@@ -333,17 +394,17 @@
             }
         };
 
-        update(); // Panggil sekali agar langsung tampil
+        update();
         countdownIntervals[customer.id] = setInterval(update, 1000);
     }
 
     // --- Event Listeners ---
+    loginBtn.addEventListener('click', handleGoogleLogin);
+    logoutBtn.addEventListener('click', handleLogout);
+
     customerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (!userId) {
-            alert("Terjadi kesalahan, coba muat ulang halaman.");
-            return;
-        }
+        if (!userId) return;
 
         const username = e.target.username.value;
         const email = e.target.email.value;
@@ -377,7 +438,7 @@
         if (deleteButton) {
             const customerId = deleteButton.dataset.id;
             deleteModal.classList.remove('hidden');
-            confirmDeleteBtn.dataset.id = customerId; // Simpan id untuk dihapus
+            confirmDeleteBtn.dataset.id = customerId;
         }
     });
 
@@ -392,7 +453,6 @@
                 const customerDocRef = doc(db, "users", userId, "customers", customerId);
                 await deleteDoc(customerDocRef);
                 deleteModal.classList.add('hidden');
-                // Data akan otomatis diperbarui oleh onSnapshot
             } catch (error) {
                 console.error("Gagal menghapus pelanggan:", error);
                 alert("Gagal menghapus data.");
